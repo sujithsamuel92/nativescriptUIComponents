@@ -1,0 +1,17 @@
+<ActionBar title="List" class="action-bar">
+  <NavigationButton text="Back" android.systemIcon="ic_menu_back" (tap)="onNavBtnTap()"></NavigationButton>
+    <ActionItem text="Logout" ios.position="true" (tap)="logout()"></ActionItem>
+
+</ActionBar>
+<StackLayout class="p-20">
+    <ActivityIndicator [busy]="isLoading" width="50" height="50" [visibility]="isLoading ? 'visible' : 'collapse'" color="red"></ActivityIndicator>
+    <ListView [items]="myItems" (itemTap)="onItemTap($event)">
+    <template let-item="item">
+        <StackLayout>
+            <Label [text]='" Id " + item.id'></Label>
+            <Label [text]='" NAME " + item.name'></Label>
+            <Label [text]='"  USERNAME " + item.username'></Label>
+        </StackLayout>
+    </template>
+</ListView>
+</StackLayout>
